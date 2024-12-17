@@ -67,3 +67,7 @@ require __DIR__.'/AdminAuth.php';
 
 
 Route::get('/dashboard', [FoodController::class, 'index'])->name('dashboard');
+
+Route::get('/reservation', function () {
+    return Inertia::render('Reservation/Reservation'); // Capital "R" matches file name
+})->name('reservation');
