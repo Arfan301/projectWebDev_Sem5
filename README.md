@@ -11,5 +11,6 @@ Lakukan ini ketika pertama kali menclone repository:
 - php artisan key:generate
 
 Untuk meng-akses website :
+- nyalakan xampp
 - php artisan serve
 - npm run dev
