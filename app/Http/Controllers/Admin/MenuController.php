@@ -13,11 +13,27 @@ class MenuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {   
-        $menus = Menu::get();
+        // $menus = Menu::get();
+        // return Inertia::render('Admin/Menu/Index', [
+        //     'menus' => $menus,
+        // ]);
+        // $menus = Menu::paginate(5);
+        // return Inertia::render('Admin/Menu/Index', [
+        //     'menus' => $menus,
+        // ]);
+        $search = $request->input('search');
+        if ($search) {
+            $menus = Menu::where('name', 'like', '%' . $search . '%')
+                ->orWhere('price', 'like', '%' . $search . '%')
+                ->paginate(3);
+        } else {
+            $menus = Menu::paginate(3);
+        }
         return Inertia::render('Admin/Menu/Index', [
             'menus' => $menus,
+            'search' => $search,
         ]);
     }
 
