@@ -34,7 +34,7 @@ defineProps({
                             <button
                                 class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition duration-300 ease-in-out"
                             >
-                                Reserve Now
+                                Details
                             </button>
                         </div>
                     </div>
