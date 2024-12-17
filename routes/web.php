@@ -7,6 +7,8 @@ use App\Models\Admin;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\FoodController; // Ensure this matches your controller name
+
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +64,6 @@ Route::middleware('auth:admin')->group(function () {
 
 require __DIR__.'/auth.php';
 require __DIR__.'/AdminAuth.php';
+
+
+Route::get('/dashboard', [FoodController::class, 'index'])->name('dashboard');
