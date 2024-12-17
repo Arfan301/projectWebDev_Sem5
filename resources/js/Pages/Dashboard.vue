@@ -31,12 +31,7 @@ defineProps({
                             <!-- Food Price -->
                             <p class="text-blue-500 font-semibold mb-4">Price: Rp {{ menu.price }}</p>
                             <!-- Reservation Button -->
-                            <!-- <button
-                                class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition duration-300 ease-in-out"
-                            >
-
-                                Details
-                            </button>
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition duration-300 ease-in-out">Details</button>
 
                         </div>
                     </div>
