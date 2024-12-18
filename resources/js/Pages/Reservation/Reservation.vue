@@ -92,20 +92,22 @@ const message = ref('');
 // Submit reservation data
 const submitReservation = async () => {
   try {
-    const response = await axios.post('/api/reserve', {
+    const response = await axios.post('/api/reservations', {
       Name: reservation.value.name,
       No_Telp: reservation.value.phone,
       Reservation_Date: reservation.value.date,
       Number_Of_Guest: reservation.value.guests,
-      user_id: 1, // Change this to dynamic user ID from authentication
+      user_id: 1, // Static for now, replace with actual user ID from authentication
     });
 
     // Show success message
-    message.value = 'Reservation submitted successfully!';
+    message.value = 'Reservation added successfully!';
+    console.log('Response:', response.data);
+
     resetForm();
   } catch (error) {
-    console.error('Error submitting reservation:', error);
-    message.value = 'Failed to submit reservation. Please try again.';
+    console.error('Error adding reservation:', error.response?.data || error);
+    message.value = 'Failed to add reservation. Please try again.';
   }
 };
 

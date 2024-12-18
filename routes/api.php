@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReserveController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +38,7 @@ Route::post('/reserve', function (Request $request) {
         'message' => 'Reservation submitted successfully!',
     ], 200);
 });
+
+
+
+Route::apiResource('reservations', ReserveController::class);

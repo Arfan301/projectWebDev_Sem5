@@ -8,6 +8,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\FoodController; // Ensure this matches your controller name
+use App\Http\Controllers\ReservationController;
+
 
 
 /*
@@ -71,3 +73,7 @@ Route::get('/dashboard', [FoodController::class, 'index'])->name('dashboard');
 Route::get('/reservation', function () {
     return Inertia::render('Reservation/Reservation'); // Capital "R" matches file name
 })->name('reservation');
+
+
+// Reservation CRUD routes
+Route::apiResource('reservations', ReserveController::class);
