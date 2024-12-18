@@ -77,3 +77,13 @@ Route::get('/reservation', function () {
 
 // Reservation CRUD routes
 Route::apiResource('reservations', ReserveController::class);
+
+
+Route::middleware('auth:admin')->group(function () {
+    // Existing admin routes...
+
+    // Reserve Page Route
+    Route::get('/admin/reserve', function () {
+        return Inertia::render('Admin/AdminReserve');
+    })->name('admin.reserve.index');
+});

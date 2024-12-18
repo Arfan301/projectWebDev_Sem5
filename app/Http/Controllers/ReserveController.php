@@ -9,8 +9,9 @@ class ReserveController extends Controller
 {
     public function index()
     {
-        return reserve::all();
+        return response()->json(reserve::all());
     }
+
 
     public function store(Request $request)
     {

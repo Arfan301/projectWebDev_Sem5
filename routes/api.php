@@ -39,6 +39,4 @@ Route::post('/reserve', function (Request $request) {
     ], 200);
 });
 
-
-
 Route::apiResource('reservations', ReserveController::class);
