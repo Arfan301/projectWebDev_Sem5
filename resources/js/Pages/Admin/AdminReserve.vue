@@ -1,6 +1,6 @@
 <template>
     <AdminAuthenticatedLayout>
-        <div class="min-h-screen bg-white">
+        <div class="min-h-screen bg-wheat">
     
         <!-- Main Content -->
         <div class="container">
@@ -15,7 +15,7 @@
             <div v-else>
             <table class="table-auto w-full border-collapse border border-gray-300">
                 <thead>
-                <tr class="bg-gray-200">
+                <tr class="bg-white">
                     <th class="border border-gray-300 px-4 py-2">ID</th>
                     <th class="border border-gray-300 px-4 py-2">User ID</th>
                     <th class="border border-gray-300 px-4 py-2">Name</th>
@@ -25,7 +25,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="reservation in reservations" :key="reservation.id">
+                <tr class="bg-white" v-for="reservation in reservations" :key="reservation.id">
                     <td class="border border-gray-300 px-4 py-2 text-center">{{ reservation.id }}</td>
                     <td class="border border-gray-300 px-4 py-2 text-center">{{ reservation.user_id }}</td>
                     <td class="border border-gray-300 px-4 py-2 text-center">{{ reservation.Name }}</td>
@@ -94,8 +94,8 @@
     background-color: #f2f2f2;
   }
 
-  /* .bg-wheat{
+  .bg-wheat{
     background-color: wheat;
-  } */
+  }
   </style>
   
