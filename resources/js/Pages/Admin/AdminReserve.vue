@@ -47,30 +47,32 @@
   </template>
   
   <script setup>
-  import AdminAuthenticatedLayout from "@/Layouts/AdminAuthenticatedLayout.vue";
-  import { ref, onMounted } from "vue";
-  import axios from "axios";
+    import AdminAuthenticatedLayout from "@/Layouts/AdminAuthenticatedLayout.vue";
+    import { ref, onMounted } from "vue";
+    import axios from "axios";
+    
+    // State Variables
+    const reservations = ref([]);
+    const loading = ref(true);
+    
+    // Fetch Reservations Data
+    const fetchReservations = async () => {
+      try {
+        const response = await axios.get("/api/reservations");
+        console.log(response.data);  // Log the data to inspect it
+        reservations.value = response.data;
+      } catch (error) {
+        console.error("Error fetching reservations:", error);
+      } finally {
+        loading.value = false;
+      }
+    };
+
   
-  // State Variables
-  const reservations = ref([]);
-  const loading = ref(true);
-  
-  // Fetch Reservations Data
-  const fetchReservations = async () => {
-    try {
-      const response = await axios.get("/api/reservations"); // API endpoint
-      reservations.value = response.data;
-    } catch (error) {
-      console.error("Error fetching reservations:", error);
-    } finally {
-      loading.value = false;
-    }
-  };
-  
-  // Fetch data when the component is mounted
-  onMounted(() => {
-    fetchReservations();
-  });
+    // Fetch data when the component is mounted
+    onMounted(() => {
+      fetchReservations();
+    });
   </script>
   
   <style scoped>

@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\FoodController; // Ensure this matches your controller name
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\ReserveController; // Add this line
+
 
 
 
